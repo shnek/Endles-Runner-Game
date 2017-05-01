@@ -33,17 +33,16 @@ function touchStartEvent(event){
         pressed.push(' ');
         first += 1;
     }
-    console.log("Start " + first);
 
 }
 
 function touchEndEvent(event){
     if(first == 2){
-        pressed.splice(' ', 1);
+        pressed.splice(pressed.indexOf(" "), 1);
         first -= 1;
     }else if(first == 1){
-        pressed.splice('d', 1);
+        pressed.splice(pressed.indexOf('d'), 1);
         first -= 1;
     }
-    console.log("End " + first);
+
 }
