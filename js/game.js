@@ -10,6 +10,7 @@ var render = function () {
     requestAnimationFrame( render );
     checkForPoints(player);
     moveRocks();
+    updatePlayerDistance(player);
     renderer.render(scene, camera);
 };
 

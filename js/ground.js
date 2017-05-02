@@ -87,7 +87,7 @@ function generateRocks(leftX, rightX){
  
 function moveRocks(){
     rocks.forEach(rock => {
-        rock.position.x -= SPEED;
+        rock.position.x -= SPEED/2;
         var desiredY = getGroundYHelper(rock);
         if(desiredY){
             rock.position.y = desiredY + 0.3;
@@ -95,7 +95,6 @@ function moveRocks(){
             scene.remove(rock);
             rocks.splice(rocks.indexOf(rock), 1);
         }
-
     })
 }
 

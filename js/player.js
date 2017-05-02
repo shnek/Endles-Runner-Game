@@ -4,7 +4,7 @@ var player = new THREE.Mesh( geometry, material );
 scene.add( player );
 
 var points = 0;
-
+var distance = 0;
 
 
 player.position.y = getGroundY(player, ground) + 1;
@@ -21,4 +21,12 @@ function checkForPoints(object){
     });
     document.getElementById("score").innerHTML = 
     "Score: " + points;
+}
+
+function updatePlayerDistance(object){
+    if(object.position.x > distance){
+        distance = Math.round(object.position.x);
+        document.getElementById("distance").innerHTML = 
+         "Distance: " + distance;
+    }
 }
