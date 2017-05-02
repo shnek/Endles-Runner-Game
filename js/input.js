@@ -4,8 +4,8 @@ var first = 0;
 
 window.addEventListener('keydown', handleKeyDown, false);
 window.addEventListener('keyup', handleKeyUp, false); 
-window.addEventListener('touchstart', touchStartEvent, false);
-window.addEventListener('touchend', touchStartEvent, false);
+window.addEventListener('touchstart', touchEvent, false);
+window.addEventListener('touchend', touchEvent, false);
 
 function handleKeyDown(event){
     var index = pressed.indexOf(event.key.toLowerCase());
@@ -25,7 +25,7 @@ function handleKeyUp(event){
     }
 }
 
-function touchStartEvent(event){
+function touchEvent(event){
     var arr = Object.keys(event.touches).map(function(k){
         return event.touches[k];
     });
@@ -40,28 +40,5 @@ function touchStartEvent(event){
             pressed.push('a');
         }
     })
-    // console.log(gameWidth + ":" + gameHeight)
-    // for(i = 0; i < event.touches.length; i++){
-    //     console.log(event.touches.i.clientX);
-    // }
-    // if(first == 0){
-    //     pressed.push('d');
-    //     first += 1;
-    // }else if(first == 1){
-    //     pressed.push(' ');
-    //     first += 1;
-    // }
-
-}
-
-function touchEndEvent(event){
-    // console.log(event.touches);
-    if(first == 2){
-        pressed.splice(pressed.indexOf(" "), 1);
-        first -= 1;
-    }else if(first == 1){
-        pressed.splice(pressed.indexOf('d'), 1);
-        first -= 1;
-    }
 
 }
