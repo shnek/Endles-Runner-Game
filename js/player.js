@@ -23,6 +23,18 @@ function checkForPoints(object){
     "Score: " + points;
 }
 
+function checkForRocks(object){
+    rocks.forEach(rock => {
+        if(object.position.x + 0.2 > rock.position.x - 0.3 && object.position.x < rock.position.x + 0.3){
+            if(object.position.y < rock.position.y + 0.3 && object.position.y + 0.5 > rock.position.y - 0.3){
+                
+                console.log("dead!");
+                location.reload();
+            }
+        }
+    });
+}
+
 function updatePlayerDistance(object){
     if(object.position.x > distance){
         distance = Math.round(object.position.x);
