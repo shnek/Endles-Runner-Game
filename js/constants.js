@@ -26,3 +26,5 @@ var distance = 0;
 
 var camFactor = 150;
 var zoomFactor = 800;
+
+var dead = false;

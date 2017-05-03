@@ -25,11 +25,11 @@ function checkForPoints(object){
 
 function checkForRocks(object){
     rocks.forEach(rock => {
-        if(object.position.x + 0.2 > rock.position.x - 0.3 && object.position.x < rock.position.x + 0.3){
+        if(object.position.x > rock.position.x - 0.3 && object.position.x < rock.position.x + 0.3){
             if(object.position.y < rock.position.y + 0.3 && object.position.y + 0.5 > rock.position.y - 0.3){
                 
-                console.log("dead!");
-                location.reload();
+                dead = true;
+                // location.reload();
             }
         }
     });

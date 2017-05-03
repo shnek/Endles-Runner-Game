@@ -22,7 +22,6 @@ function onWindowResize(){
     camera.top = gameHeight/camFactor;
     camera.bottom = -gameHeight/camFactor;
     camera.zoom = gameWidth / zoomFactor;
-    console.log(camera.zoom);
 
     camera.updateProjectionMatrix();
 
