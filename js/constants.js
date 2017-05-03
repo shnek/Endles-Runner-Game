@@ -8,6 +8,8 @@ const G_FORCE = 0.003;
 
 //Constants for camera alignment
 const CAMERA_DIFF = 1;
+const CAMERA_X_DIFF = 1;
+const CAMERA_Y_DIFF = 0.5;
 const CAMERA_DISTANCE = 5;
 
 const NEW_GROUND_DISTANCE = 10;
@@ -18,3 +20,6 @@ const TOP_SPEED = 0.09;
 var pointArray = [];
 
 var distance = 0;
+
+var camFactor = 150;
+var zoomFactor = 800;
