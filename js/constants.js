@@ -16,3 +16,5 @@ const HORIZONTAL_SPEED = 0.003;
 const TOP_SPEED = 0.09;
 
 var pointArray = [];
+
+var distance = 0;

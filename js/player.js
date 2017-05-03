@@ -4,7 +4,7 @@ var player = new THREE.Mesh( geometry, material );
 scene.add( player );
 
 var points = 0;
-var distance = 0;
+
 
 
 player.position.y = getGroundY(player, ground) + 1;

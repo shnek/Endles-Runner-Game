@@ -53,7 +53,7 @@ function move(object){
             object.speed = object.speed < 0.001 ? 0 : object.speed;
         }
         
-        if(object.moveLeft){
+        if(object.moveLeft && distance < object.position.x + 5){
             object.speed -= HORIZONTAL_SPEED;
             object.speed = (object.speed / TOP_SPEED) < -1 ? -TOP_SPEED : object.speed;
         }else if(object.speed < 0){
