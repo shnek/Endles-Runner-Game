@@ -118,6 +118,14 @@ function getGroundY(object, ground){
         }
 
     }, this);
+    var lowest = object.position.y - 5;
+   
+    if(desiredYleft < lowest){
+        return desiredYright;
+    }
+    if(desiredYright < lowest){
+        return desiredYleft;
+    }
     return (desiredYleft + desiredYright)/2;
 }
 
