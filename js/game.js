@@ -15,7 +15,6 @@ var render = function () {
     renderer.render(scene, camera);
 };
 
-
 render();
 
 

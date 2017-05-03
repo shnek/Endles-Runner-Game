@@ -13,22 +13,22 @@ var lastGroundYhelper = 0;
 
 var rocks = [];
 
-
 var x = 0; y = 0;
 
 
 function createGround(leftX, rightX, leftY){
     var newGround = new THREE.Shape();
+    // Starting in a proper place
     newGround.moveTo(leftX, leftY - MIN_HEIGHT);
     newGround.lineTo(leftX, leftY);
+
+    // Setting up variables for the loop
     var distance = rightX - leftX;
-    var tempY = leftY;
     var A = leftY;
     var B = Math.random();
-    var Y = lastGroundYhelper;
+    var Y = lastGroundYhelper;  // Y is the variable to make sure that two quadradic curves merged together look smooth
     
     for(i = 0; i < distance; i++){
-        
         newGround.quadraticCurveTo(
             leftX + i + 0.5, 
             A + Y,
@@ -38,24 +38,30 @@ function createGround(leftX, rightX, leftY){
         A += B;
         Y = (B - Y)*0.9;
         lastGroundYhelper = Y;
-        B = Math.random()/2;
-            
+        B = Math.random()/2;    
     }
-    tempY = A;
+    // Finishing the mesh in a proper place
     newGround.lineTo(rightX, leftY - MIN_HEIGHT);
+
     var geometry = new THREE.ShapeGeometry( newGround );
     var material = new THREE.MeshBasicMaterial( {color: 0xff0000 } );
     ground = new THREE.Mesh(geometry, material);
+
+    //Adding additional variables that will be used in other code
     ground.leftX = leftX;
     ground.rightX = rightX;
+
     grounds.push(ground);
     scene.add(ground);
-    lastGroundY = tempY;
+
+    lastGroundY = A;
+
     generatePoints(leftX, rightX);
     generateRocks(leftX, rightX);
     return lastGroundY;
 }
 
+// Create starting level
 createGround(-10, lastGroundX, lastGroundY);
 
 function generatePoints(leftX, rightX){
@@ -120,6 +126,7 @@ function getGroundY(object, ground){
     }, this);
     var lowest = object.position.y - 5;
    
+    // Making sure that even if we are on the border of the ground, the output is not distorted by a value that is not found
     if(desiredYleft < lowest){
         return desiredYright;
     }
@@ -129,6 +136,7 @@ function getGroundY(object, ground){
     return (desiredYleft + desiredYright)/2;
 }
 
+// Function does the same as the above getGroundY, but without knowing the current ground
 function getGroundYHelper(object){
     var desiredX = object.position.x;
     var desiredGround;
@@ -147,9 +155,7 @@ function getGroundYHelper(object){
 
 
 function checkForNewGrounds(object, oldX, oldY, lastY){
-   
     if(oldX - object.position.x < NEW_GROUND_DISTANCE){
-        
         lastGroundX = oldX + 20;
         lastGroundY = createGround(oldX, oldX + 20, oldY, lastY);
     }

@@ -26,12 +26,13 @@ function handleKeyUp(event){
 }
 
 function touchEvent(event){
+    // Convert JSON having touch events as entries to array for easier processing
     var arr = Object.keys(event.touches).map(function(k){
         return event.touches[k];
     });
+    // Zeroing array everytime we add new touchEvent in order to not worry about removing stuff from array or adding twice.
     pressed.length = 0;
     arr.forEach(touch => {
-        // console.log(touch.clientX + ":" + touch.clientY);
         if(touch.clientY < gameHeight/2){
             pressed.push(' ');
         } else if(touch.clientX > gameWidth/2){

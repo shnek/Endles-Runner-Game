@@ -1,16 +1,15 @@
 var scene = new THREE.Scene();
 var renderer = new THREE.WebGLRenderer();
+
 var gameWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var gameHeight= Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
 var camera = new THREE.OrthographicCamera(-gameWidth/camFactor, gameWidth/camFactor, gameHeight/camFactor, -gameHeight/camFactor, 0.1, 1000 );
 
 renderer.setSize( window.innerWidth, window.innerHeight );
-
 document.body.appendChild( renderer.domElement );
 
 window.addEventListener( 'resize', onWindowResize, false );
-
 
 //Automatic window resizing with setting to the same width on every screen.
 function onWindowResize(){
@@ -29,8 +28,8 @@ function onWindowResize(){
 
 }
 
+// Setting basic parameters for the camera
 camera.position.z = CAMERA_DISTANCE;
-console.log(gameWidth);
 camera.zoom = gameWidth/zoomFactor;
 camera.updateProjectionMatrix();
 
