@@ -17,6 +17,9 @@ const NEW_GROUND_DISTANCE = 10;
 const HORIZONTAL_SPEED = 0.003;
 const TOP_SPEED = 0.09;
 
+const ROCK_SIZE = 0.2;
+
+
 var pointArray = [];
 
 var distance = 0;

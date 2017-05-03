@@ -5,16 +5,15 @@ var gameHeight= Math.max(document.documentElement.clientHeight, window.innerHeig
 
 var camera = new THREE.OrthographicCamera(-gameWidth/camFactor, gameWidth/camFactor, gameHeight/camFactor, -gameHeight/camFactor, 0.1, 1000 );
 
-//#TODO: add automatic resizing to the full window, when browser window is being resized. Add a little bit customization, since usually this does not fit the full window.
 renderer.setSize( window.innerWidth, window.innerHeight );
 
 document.body.appendChild( renderer.domElement );
 
 window.addEventListener( 'resize', onWindowResize, false );
 
+
+//Automatic window resizing with setting to the same width on every screen.
 function onWindowResize(){
-
-
     gameWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     gameHeight= Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     renderer.setSize( gameWidth, gameHeight ); 
