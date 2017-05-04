@@ -1,4 +1,4 @@
-var geometry = new THREE.BoxGeometry( 0.2, 0.5, 0.01 );
+var geometry = new THREE.BoxGeometry( PLAYER_WIDTH, PLAYER_HEIGHT, 0.01 );
 var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 var player = new THREE.Mesh( geometry, material );
 scene.add( player );
@@ -8,6 +8,32 @@ var points = 0;
 
 
 player.position.y = getGroundY(player, ground) + 1;
+
+
+    // DEBUG MATERIAL: DRAWS X and Y LINES ACCORDING TO THE OBJECT
+//  var lineMaterial = new THREE.LineBasicMaterial({
+// 	color: 0x0000ff
+//     });
+
+//     var lineXGeometry = new THREE.Geometry();
+//     lineXGeometry.vertices.push(
+//         new THREE.Vector3(player.position.x - 0.5, player.position.y, 0),
+//         new THREE.Vector3(player.position.x + 0.5, player.position.y, 0)
+//     );
+//     var lineYGeometry = new THREE.Geometry();
+//     lineYGeometry.vertices.push(
+//         new THREE.Vector3(player.position.x , player.position.y - 0.5, 0),
+//         new THREE.Vector3(player.position.x, player.position.y + 0.5, 0)
+//     );
+
+
+//     var lineY = new THREE.Line(lineXGeometry, lineMaterial);
+//     var lineX = new THREE.Line(lineYGeometry, lineMaterial);
+
+//     scene.add(lineX);
+//     scene.add(lineY);
+
+
 
 function checkForPoints(object){
     pointArray.forEach(point => {
@@ -25,11 +51,16 @@ function checkForPoints(object){
 
 function checkForRocks(object){
     rocks.forEach(rock => {
-        if(object.position.x < rock.position.x && rock.position.x < object.position.x + 0.2){
-            if(object.position.y - 0.5 < rock.position.y && rock.position.y < object.position.y){
-                
+        var xdis = Math.abs(object.position.x - rock.position.x);
+        var ydis = Math.abs(object.position.y - rock.position.y);
+        if(xdis <= PLAYER_WIDTH/2 + ROCK_SIZE){
+            if(ydis <= PLAYER_HEIGHT/2){
                 dead = true;
-                // location.reload();
+            }else if(ydis <= PLAYER_HEIGHT/2 + ROCK_SIZE){
+                var c2 = Math.pow(xdis - PLAYER_WIDTH/2, 2) + Math.pow(ydis - PLAYER_HEIGHT/2, 2);
+                 if(Math.sqrt(c2) <= ROCK_SIZE){
+                     dead = true;
+                 }
             }
         }
     });

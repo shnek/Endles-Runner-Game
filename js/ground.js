@@ -79,13 +79,14 @@ function generatePoints(leftX, rightX){
 }
 
 function generateRocks(leftX, rightX){
+
     var random = Math.random();
     var rockGeometry = new THREE.CircleGeometry(ROCK_SIZE, 32);
     var material = new THREE.MeshBasicMaterial({color: 0xffff00});
     var circle = new THREE.Mesh(rockGeometry, material);
     random *= 1 + (rightX - leftX) / 2
     circle.position.x = leftX + random;
-    circle.position.y = getGroundY(circle, ground) + 0.5;
+    circle.position.y = getGroundY(circle, ground) + 0.7;
     rocks.push(circle);
     scene.add(circle);
     circle.falling = true;

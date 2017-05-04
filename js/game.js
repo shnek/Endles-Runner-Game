@@ -9,7 +9,7 @@ var render = function () {
         fall(player, getGroundY(player, currentGround) - 2.46) 
         move(player);
         checkForPoints(player);
-        // moveRocks();
+        moveRocks();
         checkForRocks(player);
         updatePlayerDistance(player);
         requestAnimationFrame( render );

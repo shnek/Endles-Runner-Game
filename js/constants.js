@@ -12,12 +12,15 @@ const CAMERA_X_DIFF = 1;
 const CAMERA_Y_DIFF = 0.5;
 const CAMERA_DISTANCE = 5;
 
+const PLAYER_WIDTH = 0.2;
+const PLAYER_HEIGHT = 0.5;
+
 const NEW_GROUND_DISTANCE = 10;
 
 const HORIZONTAL_SPEED = 0.003;
 const TOP_SPEED = 0.09;
 
-const ROCK_SIZE = 0.02;  //old: 0.2
+const ROCK_SIZE = 0.2;
 
 
 var pointArray = [];
