@@ -25,8 +25,8 @@ function checkForPoints(object){
 
 function checkForRocks(object){
     rocks.forEach(rock => {
-        if(object.position.x > rock.position.x - 0.3 && object.position.x < rock.position.x + 0.3){
-            if(object.position.y < rock.position.y + 0.3 && object.position.y + 0.5 > rock.position.y - 0.3){
+        if(object.position.x < rock.position.x && rock.position.x < object.position.x + 0.2){
+            if(object.position.y - 0.5 < rock.position.y && rock.position.y < object.position.y){
                 
                 dead = true;
                 // location.reload();

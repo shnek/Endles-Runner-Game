@@ -8,11 +8,11 @@ var render = function () {
         updateCurrentGround(player.position.x);
         fall(player, getGroundY(player, currentGround) - 2.46) 
         move(player);
-        requestAnimationFrame( render );
         checkForPoints(player);
-        moveRocks();
+        // moveRocks();
         checkForRocks(player);
         updatePlayerDistance(player);
+        requestAnimationFrame( render );
         renderer.render(scene, camera);
     }
 };
