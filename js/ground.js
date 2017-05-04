@@ -2,7 +2,7 @@
 const MIN_HEIGHT = 10;
 
 var vertices;
-var lastGround;
+var lastGround; //possible remove?
 
 var grounds = [];
 var currentGround;
@@ -61,8 +61,7 @@ function createGround(leftX, rightX, leftY){
     return lastGroundY;
 }
 
-// Create starting level
-createGround(-10, lastGroundX, lastGroundY);
+
 
 function generatePoints(leftX, rightX){
     var random = Math.random();

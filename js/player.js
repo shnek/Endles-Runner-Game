@@ -1,13 +1,18 @@
 var geometry = new THREE.BoxGeometry( PLAYER_WIDTH, PLAYER_HEIGHT, 0.01 );
 var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 var player = new THREE.Mesh( geometry, material );
-scene.add( player );
 
-var points = 0;
-
+var points;
 
 
-player.position.y = getGroundY(player, ground) + 1;
+function createPlayer(){
+    scene.add( player );
+    player.position.x = 0;
+    player.position.y = getGroundY(player, ground) + 1;
+
+    points = 0;
+    distance = 0;
+}
 
 
     // DEBUG MATERIAL: DRAWS X and Y LINES ACCORDING TO THE OBJECT

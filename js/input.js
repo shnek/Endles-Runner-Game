@@ -1,5 +1,4 @@
 var pressed = [];
-var first = 0;
 
 
 window.addEventListener('keydown', handleKeyDown, false);

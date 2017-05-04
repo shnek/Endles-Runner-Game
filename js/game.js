@@ -1,5 +1,8 @@
-
-
+document.getElementById("startGame").addEventListener('click', function(){
+    console.log("Working");
+    start();
+})
+var menu = document.getElementById("menu");
 
 var render = function () {
     if(!dead){
@@ -14,10 +17,42 @@ var render = function () {
         updatePlayerDistance(player);
         requestAnimationFrame( render );
         renderer.render(scene, camera);
+    }else{
+        menu.style.visibility = 'visible';
+        requestAnimationFrame( render );
+        renderer.render(scene, camera);
     }
 };
 
 render();
+
+function start(){
+    scene.children.length = 0;
+    flushData();
+
+    createGround(-10, lastGroundX, lastGroundY);
+    // Create starting level
+    createPlayer();
+    console.log("Starting up")
+    dead = false;
+    menu.style.visibility = 'hidden';
+    
+}
+
+function flushData(){
+    pointArray.length = 0;
+    pressed.length = 0;
+    grounds.length = 0;
+
+    currentGround = {};
+
+    lastGroundX = 10;
+    lastGroundY = 1;
+    lastGroundYhelper = 0;
+
+    rocks.length = 0;
+
+}
 
 
 
