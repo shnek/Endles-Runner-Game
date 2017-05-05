@@ -1,7 +1,7 @@
 document.getElementById("menu").addEventListener('click', function(){
     start();
 })
-var menu = document.getElementById("menu");
+var menu = document.getElementById("menuContainer");
 
 var render = function () {
     if(!dead){
