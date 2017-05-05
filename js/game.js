@@ -32,7 +32,6 @@ function start(){
     createGround(-10, lastGroundX, lastGroundY);
     // Create starting level
     createPlayer();
-    console.log("Starting up")
     dead = false;
     menu.style.visibility = 'hidden';
     
@@ -42,6 +41,7 @@ function flushData(){
     pointArray.length = 0;
     pressed.length = 0;
     grounds.length = 0;
+    player.speed = 0;
 
     currentGround = {};
 
