@@ -31,13 +31,14 @@ function fall(object, targetY){
 function move(object){
     
     if(object.speed || object.speed == 0){
-        if(pressed.indexOf("d") > -1){
+        if(pressed.indexOf("d") > -1 || pressed.indexOf("arrowright") > -1){
+            
             object.moveRight = true;
         }else {
             object.moveRight = false;
         }
         
-        if(pressed.indexOf("a") > -1){
+        if(pressed.indexOf("a") > -1 || pressed.indexOf("arrowleft") > -1){
             object.moveLeft = true; 
         }else{
             object.moveLeft = false;
@@ -72,7 +73,7 @@ function move(object){
         object.position.y = groundY;
     }
    
-    if(pressed.indexOf(" ") > -1){
+    if(pressed.indexOf(" ") > -1 || pressed.indexOf("arrowup") > -1){
         object.jump = true;
         object.falling = true;
     }else{

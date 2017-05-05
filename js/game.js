@@ -1,5 +1,4 @@
 document.getElementById("startGame").addEventListener('click', function(){
-    console.log("Working");
     start();
 })
 var menu = document.getElementById("menu");

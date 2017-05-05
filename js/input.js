@@ -14,6 +14,9 @@ function handleKeyDown(event){
         // Add current key to the array of pressed keys.
         pressed.push(event.key.toLowerCase());
     }
+    if(event.key == "Enter"){
+        start();
+    }
 }
 
 function handleKeyUp(event){
