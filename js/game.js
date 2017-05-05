@@ -1,4 +1,4 @@
-document.getElementById("startGame").addEventListener('click', function(){
+document.getElementById("menu").addEventListener('click', function(){
     start();
 })
 var menu = document.getElementById("menu");

@@ -6,6 +6,13 @@ const SPEED = 0.07;
 //Gravity force
 const G_FORCE = 0.003;
 
+
+// COLORS
+const PLAYER_COLOR = 0xD62246;
+const GROUND_COLOR = 0x0E7C7B;
+const ROCK_COLOR = 0x4B1D3F;
+const COIN_COLOR = 0x00A8E8;
+
 //Constants for camera alignment
 const CAMERA_DIFF = 1;
 const CAMERA_X_DIFF = 1;

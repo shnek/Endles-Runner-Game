@@ -44,7 +44,7 @@ function createGround(leftX, rightX, leftY){
     newGround.lineTo(rightX, leftY - MIN_HEIGHT);
 
     var geometry = new THREE.ShapeGeometry( newGround );
-    var material = new THREE.MeshBasicMaterial( {color: 0xff0000 } );
+    var material = new THREE.MeshBasicMaterial( {color: GROUND_COLOR } );
     ground = new THREE.Mesh(geometry, material);
 
     //Adding additional variables that will be used in other code
@@ -66,7 +66,7 @@ function createGround(leftX, rightX, leftY){
 function generatePoints(leftX, rightX){
     var random = Math.random();
     var pointGeometry = new THREE.BoxGeometry( 0.1, 0.1, 0.01 );
-    var pointMaterial = new THREE.MeshBasicMaterial( { color: 0x0000ff } );
+    var pointMaterial = new THREE.MeshBasicMaterial( { color: COIN_COLOR } );
     random *= 1 + (rightX - leftX)/2
     for(i = 0; i < 5; i++){
         var point = new THREE.Mesh( pointGeometry, pointMaterial );
@@ -81,7 +81,7 @@ function generateRocks(leftX, rightX){
 
     var random = Math.random();
     var rockGeometry = new THREE.CircleGeometry(ROCK_SIZE, 32);
-    var material = new THREE.MeshBasicMaterial({color: 0xffff00});
+    var material = new THREE.MeshBasicMaterial({color: ROCK_COLOR});
     var circle = new THREE.Mesh(rockGeometry, material);
     random *= 1 + (rightX - leftX) / 2
     circle.position.x = leftX + random;

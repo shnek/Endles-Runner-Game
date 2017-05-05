@@ -1,5 +1,5 @@
 var scene = new THREE.Scene();
-var renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer({ alpha: true });
 
 var gameWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var gameHeight= Math.max(document.documentElement.clientHeight, window.innerHeight || 0);

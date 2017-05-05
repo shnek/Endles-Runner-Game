@@ -1,5 +1,5 @@
 var geometry = new THREE.BoxGeometry( PLAYER_WIDTH, PLAYER_HEIGHT, 0.01 );
-var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+var material = new THREE.MeshBasicMaterial( { color: PLAYER_COLOR } );
 var player = new THREE.Mesh( geometry, material );
 
 var points;

@@ -40,16 +40,26 @@
 			canvas { width: 50%; height: 30%; display:block } 
             #container {
                 position: relative;
+                font-family: "Avant Garde", sans-serif;
             }
             #container canvas, #overlay, #menuContainer{
                 position: absolute;
             }
             canvas {
-                border: 1px solid black;
+                border: 1px solid #BFDBF7;
+                background-color: #BFDBF7;
+            }
+            .backgroundColor{
+                color: #388697;
+                background-color: #BFDBF7;
+                text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
             }
             #overlay {
-                margin-left: 15px;
-                color: white;
+                padding: 10px;
+                margin: 15px;
+                color: #388697;
+                background-color: #BFDBF7;
+                text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
                 -moz-user-select: -moz-none;
                 -khtml-user-select: none;
                 -webkit-user-select: none;
@@ -57,13 +67,14 @@
                 user-select: none;
             }
             #menuContainer {
+                color: #388697;
+                background-color: #BFDBF7;
+                text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
                 left: 50%;
                 top: 50%;
             }
             #menu {
                 padding: 50px;
-                background-color: rgba(50, 50, 50, 0.5);
-                color: white;
                 position: relative;
                 left: -50%;
                 top: 20px;
@@ -83,13 +94,12 @@
         <div id="container">
             <canvas></canvas>
             <div id="overlay">
-                <h2 id="score">Score: 0<h2>
-                <h2 id="distance">Distance: 0</h2>
+                <h id="score">Score: 0</h></br>
+                <h id="distance">Distance: 0</h>
             </div>
             <div id="menuContainer">
                 <div id="menu">
-                    <h2 id="start">My own game</h2>
-                    <button id="startGame">Start Game</button>
+                    <h2 id="start">Start game</h2>
                 </div>
             </div>
         </div>
