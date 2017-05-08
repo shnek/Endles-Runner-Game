@@ -12,6 +12,8 @@ function createPlayer(){
 
     points = 0;
     distance = 0;
+
+    
 }
 
 

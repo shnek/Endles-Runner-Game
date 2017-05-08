@@ -65,8 +65,10 @@ function createGround(leftX, rightX, leftY){
 
 function generatePoints(leftX, rightX){
     var random = Math.random();
+
     var pointGeometry = new THREE.BoxGeometry( 0.1, 0.1, 0.01 );
     var pointMaterial = new THREE.MeshBasicMaterial( { color: COIN_COLOR } );
+
     random *= 1 + (rightX - leftX)/2
     for(i = 0; i < 5; i++){
         var point = new THREE.Mesh( pointGeometry, pointMaterial );

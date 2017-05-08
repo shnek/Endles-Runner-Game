@@ -13,6 +13,7 @@ var render = function () {
         checkForPoints(player);
         moveRocks();
         checkForRocks(player);
+        updateAnimations();
         updatePlayerDistance(player);
         requestAnimationFrame( render );
         renderer.render(scene, camera);
@@ -25,6 +26,8 @@ var render = function () {
 
 render();
 
+
+
 function start(){
     scene.children.length = 0;
     flushData();
@@ -32,6 +35,7 @@ function start(){
     createGround(-10, lastGroundX, lastGroundY);
     // Create starting level
     createPlayer();
+    createAnimations();
     dead = false;
     menu.style.visibility = 'hidden';
     
