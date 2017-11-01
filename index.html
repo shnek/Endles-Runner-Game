@@ -18,8 +18,9 @@
     under the License.
 -->
 <html>
-    <head>
-        <!--
+
+<head>
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -28,89 +29,143 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-        <style>
-			body { margin: 0; 
-            overflow: hidden;}
-			canvas { width: 50%; height: 30%; display:block } 
-            #container {
-                position: relative;
-                font-family: "Avant Garde", sans-serif;
-            }
-            #container canvas, #overlay, #menuContainer{
-                position: absolute;
-            }
-            canvas {
-                border: 1px solid #BFDBF7;
-                background-color: #BFDBF7;
-            }
-            .backgroundColor{
-                color: #388697;
-                background-color: #BFDBF7;
-                text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
-            }
-            #overlay {
-                padding: 10px;
-                margin: 15px;
-                color: #388697;
-                background-color: #BFDBF7;
-                text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
-                -moz-user-select: -moz-none;
-                -khtml-user-select: none;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-            #menuContainer {
-                color: #388697;
-                background-color: #BFDBF7;
-                text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
-                left: 50%;
-                top: 50%;
-            }
-            #menu {
-                padding: 50px;
-                position: relative;
-                left: -50%;
-                top: 20px;
-                
-            }
-            #menu button, start{
-                height:20px; 
-                width:100px; 
-                margin: -20px -50px; 
-                position: relative;
-                left:50%;
-                
-            }
-		</style>
-	</head>
-	<body>
-        <div id="container">
-            <canvas></canvas>
-            <div id="overlay">
-                <h id="score">Score: 0</h></br>
-                <h id="distance">Distance: 0</h>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Hello World</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            width: 50%;
+            height: 30%;
+            display: block
+        }
+
+        #container {
+            position: relative;
+            font-family: "Avant Garde", sans-serif;
+        }
+
+        #container canvas,
+        #overlay,
+        #menuContainer {
+            position: absolute;
+        }
+
+        canvas {
+            border: 1px solid #BFDBF7;
+            background-color: #BFDBF7;
+        }
+
+        .backgroundColor {
+            color: #388697;
+            background-color: #BFDBF7;
+            text-shadow: 0px 1px 0px rgba(255, 255, 255, .3), 0px -1px 0px rgba(0, 0, 0, .7);
+        }
+
+        #overlay {
+            padding: 10px;
+            margin: 15px;
+            color: #388697;
+            background-color: #BFDBF7;
+            text-shadow: 0px 1px 0px rgba(255, 255, 255, .3), 0px -1px 0px rgba(0, 0, 0, .7);
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #menuContainer {
+            color: #388697;
+            background-color: blue;
+            /* background-color: #BFDBF7; */
+            text-shadow: 0px 1px 0px rgba(255, 255, 255, .3), 0px -1px 0px rgba(0, 0, 0, .7);
+            width: 33%;
+            left: 33%;
+            margin: 0 auto;
+            top: 50%;
+        }
+
+        #menu {
+            padding: 50px;
+            position: relative;
+            /* left: -50%; */
+            top: 20px;
+            background-color: red;
+        }
+
+        #menu button,
+        start {
+            height: 20px;
+            width: 100px;
+            /* margin: -20px -50px; */
+            position: relative;
+            /* left: 50%; */
+        }
+
+        #nameContainer {
+            width: 100%;
+            margin-top: 50px;
+            background-color: red;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            border: 0;
+            height: 25px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 10px;
+            display: block;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <canvas></canvas>
+        <div id="overlay">
+            <h id="score">Score: 0</h>
+            </br>
+            <h id="distance">Distance: 0</h>
+        </div>
+        <div id="menuContainer">
+            <div id="menu">
+                <h2 id="start">Start game</h2>
             </div>
-            <div id="menuContainer">
-                <div id="menu">
-                    <h2 id="start">Start game</h2>
-                </div>
+            <div id="nameContainer">
+                <input type="text" id="name" placeholder="Name for highscore"></input>
+                <button id="saveName">Save</button>
             </div>
         </div>
-		<script src="js/three.js"></script>
-        <script src="js/constants.js"></script>
-        <script src="js/camera.js"></script>
-        <script src="js/input.js"></script>
-        <script src="js/ground.js"></script>
-        <script src="js/physics.js"></script>
-        <script src="js/player.js"></script>
-        <script src="js/game.js"></script>
-        <script src="js/index.js"></script>
-	</body>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="js/three.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/ground.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/highscore.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
 </html>

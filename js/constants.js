@@ -8,16 +8,17 @@ const G_FORCE = 0.003;
 
 
 // COLORS
-const PLAYER_COLOR = 0xD62246;
-const GROUND_COLOR = 0x0E7C7B;
-const ROCK_COLOR = 0x4B1D3F;
-const COIN_COLOR = 0x00A8E8;
+const PLAYER_COLOR = 0x9b111e;
+const GROUND_COLOR = 0x001514;
+const ROCK_COLOR = 0xa39ba8;
+const COIN_COLOR = 0x002147;
 
 //Constants for camera alignment
 const CAMERA_DIFF = 1;
 const CAMERA_X_DIFF = 1;
 const CAMERA_Y_DIFF = 0.5;
 const CAMERA_DISTANCE = 5;
+const CAMERA_OFFSET_FACTOR = 0.5;
 
 const PLAYER_WIDTH = 0.2;
 const PLAYER_HEIGHT = 0.5;

@@ -35,9 +35,12 @@ camera.updateProjectionMatrix();
 
 // Function follows the object in X and Y axis if its further than the CAMERA_DIFF constant.
 function followCamera(object){
-
+    
     var xdiff = camera.position.x - object.position.x;
     var ydiff = camera.position.y - object.position.y;
+
+    console.log(xdiff);
+    
 
     if(xdiff > CAMERA_X_DIFF){
         camera.position.x = object.position.x + CAMERA_X_DIFF;
