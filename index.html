@@ -29,9 +29,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" /><meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Hello World</title>
@@ -152,9 +150,24 @@
                 <input type="text" id="name" placeholder="Name for highscore"></input>
                 <button id="saveName">Save</button>
             </div>
+            <div id="leaderboard">
+                <p>Highscores:</p>
+            </div>
         </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDmifpuXOHXN47sll7qiT4i96vSszequl8",
+        authDomain: "endless-d1bc6.firebaseapp.com",
+        databaseURL: "https://endless-d1bc6.firebaseio.com",
+        projectId: "endless-d1bc6",
+        storageBucket: "endless-d1bc6.appspot.com",
+        messagingSenderId: "1090030511614"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="js/three.js"></script>
     <script src="js/database.js"></script>
     <script src="js/constants.js"></script>
@@ -163,8 +176,8 @@
     <script src="js/ground.js"></script>
     <script src="js/physics.js"></script>
     <script src="js/player.js"></script>
-    <script src="js/game.js"></script>
     <script src="js/highscore.js"></script>
+    <script src="js/game.js"></script>
     <script src="js/index.js"></script>
 </body>
 

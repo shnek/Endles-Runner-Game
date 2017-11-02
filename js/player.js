@@ -49,7 +49,7 @@ function checkForRocks(object){
 function updatePlayerDistance(object){
     if(object.position.x > distance){
         distance = Math.round(object.position.x);
-        document.getElementById("distance").innerHTML = 
+        document.getElementById("distance").innerHTML =
          "Distance: " + distance;
     }
 }

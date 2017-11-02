@@ -17,6 +17,8 @@ var render = function () {
         requestAnimationFrame(render);
         renderer.render(scene, camera);
     } else {
+        saveHighscore();
+        getLeaderboard();
         menu.style.visibility = 'visible';
         requestAnimationFrame(render);
         renderer.render(scene, camera);
@@ -27,11 +29,7 @@ render();
 
 function start() {
     scene.children.length = 0;
-    database.ref('users/' + localStorage.getItem("shnek-name")).set({
-        highscore: points
-    });
     flushData();
-
     createGround(-10, lastGroundX, lastGroundY);
     // Create starting level
     createPlayer();
